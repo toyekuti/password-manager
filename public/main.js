@@ -39,7 +39,7 @@ function getPasswords() {
 
 function updatePassword(passwordId, newPassword) {
     // Make a POST request to the server to update the password
-    axios.post('/update-password', { passwordId, newPassword })
+    axios.post('http://localhost:3000/update-password', { passwordId, newPassword })
         .then(response => {
             console.log('Password updated successfully:', response);
             alert(response.data.message);
@@ -50,7 +50,7 @@ function updatePassword(passwordId, newPassword) {
 
 function deletePassword(passwordId) {
     // Make a POST request to the server to delete the password
-    axios.post('/delete-password', { passwordId })
+    axios.post('http://localhost:3000/delete-password', { passwordId })
         .then(response => {
             console.log('Password deleted successfully:', response);
             alert(response.data.message);
