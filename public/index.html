@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Password Manager</h1>
+    <h2>Create a Password</h2>
+    <div id="container">
+    <form id="passwordForm">
+        <label for="website">Website:</label>
+        <input type="text" id="website" required>
+        
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <br>
+        
+        <button type="button" id="save-password">Save Password</button>
+    </form>
+
+</div>
+
+<div>
+    <ul>
+        <li>At least 10 characters long</li>
+        <li>Includes at least one number</li>
+        <li>Includes at least one uppercase (A-Z) and lowercase letter (a-z)</li>
+        <li>Includes at least one symbol (e.g. @, &, !, #, _, *)</li> 
+    </ul>
+</div>
+
+<h2>Passwords</h2>
+
+<div id="passwordList"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
