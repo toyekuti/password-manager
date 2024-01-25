@@ -9,7 +9,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.json());
 app.use(express.static('public'));
-app.use(cors()); // Enable CORS
+app.use(cors()); // Enable CORS 
 
 // Sample in-memory database
 const passwords = [

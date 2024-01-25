@@ -72,7 +72,18 @@ function displayPasswords(passwords) {
 
     passwords.forEach(password => {
         const passwordDiv = document.createElement('div');
-        passwordDiv.innerHTML = `<strong>${password.website}</strong> - ${password.username} - ${password.password}`;
+        passwordDiv.innerHTML = `
+        <strong>${password.website}</strong> - ${password.username} - 
+        <span class="hidden-password" style="display: none;">${password.password}</span>
+        <span class="reveal-icon">👁️</span>`;
+
+        // Toggle password visibility on reveal icon click
+        const revealIcon = passwordDiv.querySelector('.reveal-icon');
+        const hiddenPassword = passwordDiv.querySelector('.hidden-password');
+
+        revealIcon.addEventListener('click', () => {
+            hiddenPassword.style.display = hiddenPassword.style.display === 'none' ? 'inline' : 'none';
+        });
 
         // Button for update
         const updateButton = createButton('Update', () => {
@@ -92,7 +103,6 @@ function displayPasswords(passwords) {
 
         passwordDiv.appendChild(updateButton);
         passwordDiv.appendChild(deleteButton);
-
         passwordListDiv.appendChild(passwordDiv);
     });
 }
